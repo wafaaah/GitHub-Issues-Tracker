@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwindcss + daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- style-sheet -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="import" href="Form.html">
+</head>
+
+<body>
+    <section>
+        <div class="navbar bg-base-100 shadow-sm">
+            <div class="flex items-center gap-2 px-7">
+                <img class="h-10 w-10" src="./assets/github-logo.png" alt="">
+                <div class="flex text-wrap text-2xl font-bold ">GitHub Issues Tracker</div>
+            </div>
+
+            <!-- Search Input Field -->
+            <div class="flex gap-2 ml-auto p-7">
+                <input id="searchInput" type="text" placeholder="Search issues.."
+                    class="input input-bordered w-30 md:w-auto" />
+                <button id="searchBtn" class="btn btn-primary hover:bg-primary text-white ">New Issue</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- task-bar -->
+    <section>
+        <div class="w-11/12 mx-auto my-10 p-7 bg-white rounded-xl shadow-md border-gray-300 ">
+
+            <div class="flex justify-left space-x-10">
+                <div>
+                    <button id="tab-all" onclick="switchTab('all')" class="btn btn-primary h-10 w-30">All</button>
+                </div>
+                <div>
+                    <button id="tab-open" onclick="switchTab('open')" class="btn btn-primary h-10 w-30">Open</button>
+                </div>
+                <div>
+                    <button id="tab-close" onclick="switchTab('close')"
+                        class="btn btn-primary h-10 w-30">Closed</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Issue-bar -->
+    <section>
+        <div class="w-11/12 mx-auto my-auto p-7 bg-white rounded-xl shadow-md border-gray-400">
+            <div class="flex items-center gap-4 flex-wrap">
+                <div class="bg-purple-200 h-20 w-20 p-3 flex justify-center items-center rounded-full">
+                    <img src="./assets/Aperture.png" alt="">
+                </div>
+                <div class="flex flex-col">
+                    <span id="totalIssues" class="font-bold text-3xl"></span>
+                    <div class="text-gray-500">Track and manage your project issues</div>
+                </div>
+                <div class="flex gap-3 items-end ml-auto p-6">
+                    <div class="bg-green-500 h-5 w-5 rounded-full"></div>
+                    <span id="stat-open">Open</span>
+                    <div class="bg-purple-500 h-5 w-5 rounded-full"></div>
+                    <span id="stat-close">Closed</span>
+                    <span id="totalIssues" class="font-bold text-3xl"></span>
+                    <div id="available"></div>
+                </div>
+              
+            <div class="flex items-center w-full py-5">
+                <div class="flex-1 h-px bg-gray-300"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="allContainer"></div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="openContainer"></div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="closeContainer"></div>
+
+            <div id="loading" class="hidden justify-center gap-4 py-10">
+                <span class="loading loading-infinity text-primary loading-xl"></span>
+                <span class="loading loading-infinity text-primary loading-xl"></span>
+                <span class="loading loading-infinity text-primary loading-xl"></span>
+            </div>
+            <div id="noissue" class="hidden justify-center">
+                <p>No issues Found</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Modal -->
+    <section>
+
+        <dialog id="issueModal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box"></div>
+        </dialog>
+     
+    </section>
+    <!-- js -->
+    <script src="./Js/script.js"></script>
+</body>
+
+</html>

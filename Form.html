@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Issues Tracker</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- tailwindcss + daisyui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- style-sheet -->
+  <link rel="stylesheet" href="./style.css">
+
+
+</head>
+<body>
+  <section>
+    <div class="hero bg-base-200 min-h-screen ">
+      <div class="hero-content flex-col">
+        
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div class="card-body">
+            <div class="h-20 w-20 flex justify-center items-center text-center flex-wrap mx-auto">
+                <img src="./assets/github-logo.png" alt="">
+            </div>
+           
+        <div class="text-center lg:text-left">
+          <h1 class="items-center text-3xl font-bold">GitHub Issues Tracker</h1>
+          <p class="flex justify-center items-center py-4 text-gray-500">
+            Sign in to manage your issues
+          </p>
+        </div>
+            <fieldset class="fieldset">
+              <label class="label font-extrabold text-lg">Username</label>
+              <input id="user" type="email" class="input" placeholder="Enter Username" />
+              <label class="label font-extrabold text-lg">Password</label>
+              <input id="password" type="password" class="input" placeholder="Enter Password" />
+              <div><a class="link link-hover">Forgot password?</a></div>
+              <button id="signin_btn" class="btn btn-primary mt-4">Sign in</button>
+              <div class="flex items-center gap-2 w-full">
+                <div class="flex-1 h-px bg-gray-300"></div>
+                <span class="px-2 text-sm text-gray-500">OR</span>
+                <div class="flex-1 h-px bg-gray-300 "></div>
+              </div>
+
+              <div class="flex justify-center items-center text-gray-500">Demo Credentials:
+              </div>
+              <div class="flex justify-center items-center">
+                 <div class="flex font-bold">Username: </div>
+                  <span class="items-center"> admin</span>
+              </div>
+              <div class="flex justify-center items-center">
+                 <div class="flex justify-center items-center font-bold">Password: </div>
+                 <span>admin123</span>
+              </div>
+              
+              
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./Js/form.js"></script>
+
+
+</body>
+
+</html>
